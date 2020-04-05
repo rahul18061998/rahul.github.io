@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculater</title>
+	
+
+
+	<style type="text/css">
+
+		button[type=button]
+		{
+			width: 40px;
+			height:21px;
+			margin-left:4px; 
+			border-radius: 4px;
+			background-color:red; 
+
+		}
+		
+		input[type="text"]
+			{
+				width:235px;
+				height:47px; 
+				border-radius: 7px;
+			}
+
+			table
+			{	
+				width: 270px;
+				height: 203px;
+				background-color:#1d2325;
+				border-radius: 7px;
+				margin-top: 50px;
+
+				
+
+			}
+			
+	</style>
+
+</head>
+<body>
+
+	<center>
+	<table border="10" >
+		<div class="height">
+		<tr>
+			<td>
+				<input type="text" placeholder="enter a number"  onkeypress="return isNumber(event)" id="cal"style='background-color:#e4c3c3;text-align: center;'>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button type="button" onclick='document.getElementById("cal").value +="7"'>7</button>
+				<button type="button" onclick='document.getElementById("cal").value +="8"'>8</button> 
+				<button type="button" onclick='document.getElementById("cal").value +="9"'>9</button>
+				<button type="button" onclick='document.getElementById("cal").value +="+"'>+</button>
+				<button type="button" onclick='document.getElementById("cal").value =" "'style="background-color: green;">C</button>
+
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<button type="button" onclick='document.getElementById("cal").value +="4"'>4</button>
+				<button type="button" onclick='document.getElementById("cal").value +="5"'>5</button>
+				<button type="button" onclick='document.getElementById("cal").value +="6"'>6</button>
+				<button type="button" onclick='document.getElementById("cal").value +="-"'>-</button>
+				<button type="button" onclick='calculate()'>=</button>
+			</td>
+
+		</tr>
+
+		<tr>
+			<td>
+				<button type="button" onclick='document.getElementById("cal").value +="1"'>1</button>
+				<button type="button" onclick='document.getElementById("cal").value +="2"'>2</button>
+				<button type="button" onclick='document.getElementById("cal").value +="3"'>3</button>
+				<button type="button" onclick='document.getElementById("cal").value +="*"'>*</button>
+				<button type="button" onclick='document.getElementById("cal").value +="%"'>%</button>
+			</td>
+
+		</tr>
+
+		<tr>
+			<td>
+				<button type="button" onclick='document.getElementById("cal").value +="0"'>0</button>
+				<button type="button" onclick='document.getElementById("cal").value +="00"'>00</button>
+				<button type="button" onclick='document.getElementById("cal").value +="."'>.</button>
+				<button type="button" onclick='document.getElementById("cal").value +="/"'>/</button>
+			</td>
+		</tr>
+	</div>
+	</table>
+	</center>
+</body>
+
+<script>
+	var fn=0;
+	var sn=0;
+	var res=0;
+	function calculate()
+	{
+		var textValue=document.getElementById("cal").value;
+		
+		document.getElementById("cal").value=eval(textValue);
+	}
+
+	function isNumber(evt) {
+    // evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 32 && (charCode < 37 || charCode >37 )&&(charCode < 42 ||charCode >43) &&  (charCode < 45 || charCode > 57) )	
+     {
+        return false;
+    }
+    
+    return true;
+}
+</script>
+
+</html>
